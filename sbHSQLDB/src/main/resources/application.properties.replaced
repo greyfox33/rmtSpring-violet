@@ -1,3 +1,0 @@
-spring.datasource.url=jdbc:hsqldb:http://localhost
-spring.datasource.username=SA
-spring.datasource.driver-class-name=org.hsqldb.jdbcDriver
