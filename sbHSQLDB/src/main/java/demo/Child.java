@@ -1,6 +1,8 @@
 package demo;
 
 //import java.sql.Date;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,8 +16,9 @@ public class Child {
     private int childid;
     private String first;
     private String last;
-	//private String gender;
-    //private Date dob;
+	private String gender;
+    private Date dob;
+    private String image;
     
     protected Child() {}
 
@@ -27,8 +30,8 @@ public class Child {
     @Override
     public String toString() {
         return String.format(
-                "Child [childid=%d, firstName='%s', lastName='%s']",
-                childid, first, last);
+                "Child [childid=%d, firstName='%s', lastName='%s', gender='%s', image='%s']",
+                childid, first, last, gender, image);
     }
 
 }
