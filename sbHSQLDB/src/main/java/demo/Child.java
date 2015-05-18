@@ -26,6 +26,19 @@ public class Child {
         this.first = first;
         this.last = last;
     }
+    
+    public int getChildId() {
+        return childid;
+      }
+    public String getFirst() {
+    	return first;
+    }
+    
+    public String getImage() {
+    	return image;
+    }
+ 
+    //TODO: need to put get/sets for all items
 
     @Override
     public String toString() {

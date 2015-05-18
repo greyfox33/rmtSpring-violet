@@ -2,27 +2,25 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var cwsApp = angular.module('cwsApp', [
   'ngRoute',
-  'phonecatAnimations',
-
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices'
+  'caseControllers'
 ]);
 
 phonecatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+      when('/child', {
+        templateUrl: 'partials/child-list.html',
+        controller: 'ChildListCtrl'
       }).
+      /*
       when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
+        templateUrl: 'partials/child-detail.html',
         controller: 'PhoneDetailCtrl'
       }).
+      */
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/app'
       });
   }]);

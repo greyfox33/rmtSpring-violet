@@ -1,7 +1,7 @@
 package demo;
 
+import java.util.ArrayList;
 import java.util.List;
-
 
 
 
@@ -10,46 +10,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping(value = "child")
 public class ChildController {
 
     @Autowired
     ChildRepository repository;
     
-	//private Logger log = Logger.getLogger(HelloController.class);
-
-	/*
-    @RequestMapping(method = RequestMethod.POST)
-	@ResponseBody
-	public Child create(@RequestBody String text) {
-		//log.info(String.format("Try to add a Word with text %s to the database", text));
-		Word word = wordService.byText(text);
-		if (word == null) {
-			word = wordService.createWord(text);
-		}
-		return word;
-	}
-	*/
-
+    @RequestMapping(method=RequestMethod.GET)
+    public List<Child> getAll() {
+        //return new ArrayList<Child>();
+    	return (List<Child>) repository.findAll();
+    }
+}
     
-	@RequestMapping
-	@ResponseBody
-	public String all() {
-		
-        // fetch all customers
-		String Out;
-				
-        Out = "Children found with findAll():<br>";
-        Out += "-------------------------------<br>";
-        for (Child child : repository.findAll()) {
-            Out += child.toString();
-        }
-        Out += "end<br>-------------------------------<br>";
-        return (Out);
+//	@RequestMapping
+//	@ResponseBody
+//	public String all() {
+//		
+//        // fetch all customers
+//		String Out;
+//				
+//        Out = "Children found with findAll():<br>";
+//        Out += "-------------------------------<br>";
+//        for (Child child : repository.findAll()) {
+//            Out += child.toString();
+//        }
+//        Out += "end<br>-------------------------------<br>";
+//        return (Out);
         // fetch an individual customer by ID
 		/*
         Child child = repository.findOne(1L);
@@ -67,5 +61,3 @@ public class ChildController {
             System.out.println(johnson);
         }
         */
-	}
-}
