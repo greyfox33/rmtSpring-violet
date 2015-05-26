@@ -1,6 +1,6 @@
-function Hello($scope, $http) {
+function Children($scope, $http) {
     $http.get('http://localhost:8080/child').
         success(function(data) {
-            $scope.greeting = data;
+            $scope.children = data;
         })
 };

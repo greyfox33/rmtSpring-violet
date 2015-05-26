@@ -13,7 +13,7 @@ public class Child {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int childid;
+    private int child_id;
     private String first;
     private String last;
 	private String gender;
@@ -28,8 +28,9 @@ public class Child {
     }
     
     public int getChildId() {
-        return childid;
+        return child_id;
       }
+    
     public String getFirst() {
     	return first;
     }
@@ -43,8 +44,8 @@ public class Child {
     @Override
     public String toString() {
         return String.format(
-                "Child [childid=%d, firstName='%s', lastName='%s', gender='%s', image='%s']",
-                childid, first, last, gender, image);
+                "Child [childId=%d, firstName='%s', lastName='%s', gender='%s', image='%s']",
+                child_id, first, last, gender, image);
     }
 
 }
