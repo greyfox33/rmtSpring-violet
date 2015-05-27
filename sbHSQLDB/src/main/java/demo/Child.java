@@ -2,10 +2,10 @@ package demo;
 
 //import java.sql.Date;
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Column;
 import javax.persistence.Id;
 
 @Entity
@@ -17,6 +17,7 @@ public class Child {
     private String first;
     private String last;
 	private String gender;
+	@Column(name="dob")
     private Date dob;
     private String image;
     
@@ -31,15 +32,47 @@ public class Child {
         return child_id;
       }
     
+    public void setChildId(int child_id) {
+    	this.child_id = child_id;
+    }
+    
     public String getFirst() {
     	return first;
     }
     
+    public void setFirst(String first) {
+    	this.first = first;
+    }
+    
+    public String getLast() {
+    	return last;
+    }
+    
+    public void setLast(String last) {
+    	this.last = last;
+    }
     public String getImage() {
     	return image;
     }
- 
-    //TODO: need to put get/sets for all items
+    
+    public void setImage(String image){
+    	this.image = image;
+    }
+    
+    public String getGender() {
+    	return gender;
+    }
+    public void setGender(String gender){
+    	this.gender = gender;
+    }
+    
+    public Date getDOB() {
+    	return dob;
+    }
+    
+    public void setDOB(Date dob) {
+    	this.dob = dob;
+    }
 
     @Override
     public String toString() {
@@ -49,4 +82,29 @@ public class Child {
     }
 
 }
+//@OneToMany( targetEntity=Employee.class )
+//private List employeelist;
+//
+//public int getId() {
+//	return id;
+//}
+//
+//public void setId(int id) {
+//	this.id = id;
+//}
+//
+//public String getName( ) {
+//	return name;
+//}
+//
+//public void setName( String deptName ) {
+//	this.name = deptName;
+//}
+//
+//public List getEmployeelist() {
+//  return employeelist;
+//}
+//
+//public void setEmployeelist(List employeelist) {
+//  this.employeelist = employeelist;
 

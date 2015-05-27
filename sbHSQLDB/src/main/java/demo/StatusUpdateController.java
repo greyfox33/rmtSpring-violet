@@ -3,10 +3,6 @@ package demo;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 import org.hibernate.mapping.Map;
 //import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,27 +17,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "child")
-public class ChildController {
+@RequestMapping(value = "statusupdate")
+public class StatusUpdateController {
 
     @Autowired
-    ChildRepository repository;
+    StatusUpdateRepository repository;
     
     @RequestMapping(method=RequestMethod.GET)
-    public List<Child> getAll() {
-        //return new ArrayList<Child>();
-    	return (List<Child>) repository.findAll();
+    public List<StatusUpdate> getAll() {
+        return (List<StatusUpdate>)repository.findAll();
     }
-    @RequestMapping(method=RequestMethod.GET, value="{id}")
-    public Child getOne(@PathVariable Long id) {
-       	return (Child) repository.findOne(id);
+    
+    @RequestMapping(method=RequestMethod.GET, value="{child_id}")
+    public List<StatusUpdate> getOne(@PathVariable int child_id) {
+       	return (List<StatusUpdate>) repository.findByChildID(child_id);
     }
     
 //    @RequestMapping(method=RequestMethod.POST)
 //    public Child create (@RequestBody Child child) {
 //        return null;
 //    }
-
+ 
 }
     
 //	@RequestMapping
