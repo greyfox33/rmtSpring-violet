@@ -2,9 +2,9 @@
 
 /* App Module */
 
-var cwsApp = angular.module('cwsApp', [
+var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
-  'caseControllers'
+  'phonecatControllers'
 ]);
 
 phonecatApp.config(['$routeProvider',
@@ -14,13 +14,11 @@ phonecatApp.config(['$routeProvider',
         templateUrl: 'partials/child-list.html',
         controller: 'ChildListCtrl'
       }).
-      /*
-      when('/phones/:phoneId', {
+      when('/child/:phoneId', {
         templateUrl: 'partials/child-detail.html',
-        controller: 'PhoneDetailCtrl'
+        controller: 'ChildDetailCtrl'
       }).
-      */
       otherwise({
-        redirectTo: '/app'
+        redirectTo: '/child'
       });
   }]);

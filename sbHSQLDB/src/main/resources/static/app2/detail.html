@@ -9,9 +9,11 @@
 
 	<body>
 		<div ng-controller="ChildDetail
-				<p><a href=detail.html><img class="thumb" src={{child.image}}></a>
-				<a href=detail.html>ChildID : {{child.childId | number}}</a>
-				Child Name : {{child.first}}</p>
+				{{$scope.id = 11}}
+				<img class="thumb" src={{child.image}}>
+				ChildID : {{child.childId | number}}<br>
+				Child Name : {{child.first}}<br>
+				
 		</div>
 	</body>
 </html>

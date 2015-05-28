@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "statusupdate")
-public class StatusUpdateController {
+@RequestMapping(value = "status")
+public class StatusController {
 
     @Autowired
-    StatusUpdateRepository repository;
+    StatusRepository repository;
     
     @RequestMapping(method=RequestMethod.GET)
-    public List<StatusUpdate> getAll() {
-        return (List<StatusUpdate>)repository.findAll();
+    public List<Status> getAll() {
+        return (List<Status>)repository.findAll();
     }
     
     @RequestMapping(method=RequestMethod.GET, value="{child_id}")
-    public List<StatusUpdate> getOne(@PathVariable int child_id) {
-       	return (List<StatusUpdate>) repository.findByChildID(child_id);
+    public List<Status> getOne(@PathVariable Long child_id) {
+       	return (List<Status>) repository.findByChildID(child_id);
     }
     
 //    @RequestMapping(method=RequestMethod.POST)

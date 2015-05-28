@@ -13,7 +13,7 @@ public class Child {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int child_id;
+    private Long child_id;
     private String first;
     private String last;
 	private String gender;
@@ -28,11 +28,11 @@ public class Child {
         this.last = last;
     }
     
-    public int getChildId() {
+    public Long getChildId() {
         return child_id;
       }
     
-    public void setChildId(int child_id) {
+    public void setChildId(Long child_id) {
     	this.child_id = child_id;
     }
     

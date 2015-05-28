@@ -1,41 +1,17 @@
-//angular.module('childList')
-//    .factory('childList', ['$http', function($http) {
-//
-//    var urlBase = '/child';
-//    var dataFactory = {};
-//
-//    dataFactory.getChildren = function () {
-//        return $http.get(urlBase);
-//    };
-//    
-//    function Hello($scope, $http) {
-//        $http.get('http://rest-service.guides.spring.io/greeting').
-//            success(function(data) {
-//                $scope.greeting = data;
-//            });
-//    }
-/*
-    dataFactory.getChild = function (id) {
-        return $http.get(urlBase + '/' + id);
-    };
-    */
+'use strict';
 
-    /*
-    dataFactory.insertCustomer = function (cust) {
-        return $http.post(urlBase, cust);
-    };
+/* Services */
 
-    dataFactory.updateCustomer = function (cust) {
-        return $http.put(urlBase + '/' + cust.ID, cust)
-    };
+childServices.factory('Child', ['$resource',
+                                function($resource){
+                                  return $resource('http://localhost:8080/child/', {}, {
+                                    query: {method:'GET', params:{}, isArray:true}
+                                  });
+                                }]);
 
-    dataFactory.deleteCustomer = function (id) {
-        return $http.delete(urlBase + '/' + id);
-    };
-
-    dataFactory.getOrders = function (id) {
-        return $http.get(urlBase + '/' + id + '/orders');
-    };
-*/
-//    return dataFactory;
-//}]);
+statusServices.factory('Status', ['$resource',
+                                function($resource){
+                                  return $resource('http://localhost:8080/Status/', {}, {
+                                    query: {method:'GET', params:{}, isArray:true}
+                                  });
+                                }]);
