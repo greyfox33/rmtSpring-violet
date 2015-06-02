@@ -11,17 +11,15 @@
       </select>
 
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10" ng-controller="ChildListCtrl">
       <!--Body content-->
-
       <ul class="child">
-        <li ng-repeat="child in children | filter:query | orderBy:orderProp" class="thumbnail">
-          <a href="#/children/{{child.id}}" class="thumb"><img ng-src="{{child.imageUrl}}"></a>
-          <a href="#/children/{{child.id}}">{{child.name}}</a>
-          <p>{{child.snippet}}</p>
-        </li>
+ 			<li ng-repeat="child in children" >
+				<p><a href=index.html#/childdetail/{{child.childId}}><img ng-src="../{{child.images}}" class="child"></a>
+				<a href=index.html#/childdetail/{{child.childId}}>ChildID : {{child.childId | number}}</a>
+				Child Name : {{child.first}}</p>
+			</li>
       </ul>
-
     </div>
   </div>
 </div>
