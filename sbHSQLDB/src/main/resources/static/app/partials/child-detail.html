@@ -1,6 +1,6 @@
 
 
-<h1>{{childDetail.first}}</h1>
+<h1>{{childDetail.first}}&nbsp{{childDetail.last}}</h1>
 
 <ul ng-controller="ChildDetailCtrl" class="specs">
   <li>
@@ -13,7 +13,7 @@
   </li>
 </ul>
 <ul ng-controller="ChildDetailStatusCtrl" class=specs>
-Status: <br>
+<h3>Status:</h3>
 	<li ng-repeat="s in childStatus" >
 	   {{s.date}}<br>
 	   {{s.status}}<br>
