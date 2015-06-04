@@ -4,7 +4,17 @@ body {
   padding-top: 20px;
 }
 
-.phones {
+div.left {
+	width: 100px; 
+	float: left;
+}
+
+div.main {
+	width: 300px;
+	float: left;
+}
+
+.child {
   list-style: none;
 }
 
@@ -16,37 +26,36 @@ body {
   width: 100px;
 }
 
-.phones li {
+.child li {
   clear: both;
   height: 115px;
   padding-top: 15px;
 }
 
 /** Detail View **/
-img.phone {
+img.child {
   float: left;
   border: 1px solid black;
   margin-right: 3em;
   margin-bottom: 2em;
   background-color: white;
   padding: 2em;
-  height: 400px;
-  width: 400px;
+  width: 300px;
 }
 
-ul.phone-thumbs {
+ul.child-thumbs {
   margin: 0;
   list-style: none;
 }
 
-ul.phone-thumbs li {
+ul.child-thumbs li {
   border: 1px solid black;
   display: inline-block;
   margin: 1em;
   background-color: white;
 }
 
-ul.phone-thumbs img {
+ul.child-thumbs img {
   height: 100px;
   width: 100px;
   padding: 1em;
@@ -61,7 +70,7 @@ ul.specs {
 
 ul.specs > li{
   display: inline-block;
-  width: 200px;
+  width: 300px;
   vertical-align: top;
 }
 

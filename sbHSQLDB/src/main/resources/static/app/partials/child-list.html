@@ -1,23 +1,12 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
-
-      Search: <input ng-model="query">
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
-      </select>
-
-    </div>
     <div class="col-md-10" ng-controller="ChildListCtrl">
       <!--Body content-->
       <ul class="child">
  			<li ng-repeat="child in children" >
-				<p><a href=index.html#/childdetail/{{child.childId}}><img ng-src="../{{child.images}}" class="child"></a>
-				<a href=index.html#/childdetail/{{child.childId}}>ChildID : {{child.childId | number}}</a>
-				Child Name : {{child.first}}</p>
+				<a href=index.html#/childdetail/{{child.childId}}><img ng-src="{{child.image}}" class="child"></a><br>
+				<a href=index.html#/childdetail/{{child.childId}}>ChildID : {{child.childId | number}}</a><br>
+				Child Name : {{child.first}}<br><br><br><br>
 			</li>
       </ul>
     </div>

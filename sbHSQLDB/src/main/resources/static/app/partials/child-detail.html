@@ -4,17 +4,19 @@
 
 <ul ng-controller="ChildDetailCtrl" class="specs">
   <li>
-		<img ng-src="{{childDetail.image}}">
-		Child image: {{childDetail.images}}<br>
+		<img ng-src="{{childDetail.image}}"><br>
+		Child image: {{childDetail.image}}<br>
 		ChildID : {{childDetail.childId | number}}<br>
 		Child First Name : {{childDetail.first}}<br>
 		Child Last Name: {{childDetail.last}}<br>
-		Child Last DOB: {{childDetail.dob}}<br>
+		Child Last DOB: {{childDetail.dob | date : medium}}<br><br>
   </li>
 </ul>
 <ul ng-controller="ChildDetailStatusCtrl" class=specs>
+Status: <br>
 	<li ng-repeat="s in childStatus" >
-	   Status: {{s.status}}<br>
+	   {{s.date}}<br>
+	   {{s.status}}<br>
 	</li>
 </ul>
 
