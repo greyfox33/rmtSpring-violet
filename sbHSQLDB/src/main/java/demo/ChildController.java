@@ -32,42 +32,4 @@ public class ChildController {
     public Child getOne(@PathVariable Long id) {
        	return (Child) repository.findOne(id);
     }
-    
-//    @RequestMapping(method=RequestMethod.POST)
-//    public Child create (@RequestBody Child child) {
-//        return null;
-//    }
-
 }
-    
-//	@RequestMapping
-//	@ResponseBody
-//	public String all() {
-//		
-//        // fetch all customers
-//		String Out;
-//				
-//        Out = "Children found with findAll():<br>";
-//        Out += "-------------------------------<br>";
-//        for (Child child : repository.findAll()) {
-//            Out += child.toString();
-//        }
-//        Out += "end<br>-------------------------------<br>";
-//        return (Out);
-        // fetch an individual customer by ID
-		/*
-        Child child = repository.findOne(1L);
-        System.out.println("Child found with findOne(1L):");
-        System.out.println("--------------------------------");
-        System.out.println(child);
-        System.out.println();
-        */
-
-        // fetch customers by last name
-        /*
-        System.out.println("Child found with findByLastName('johnson'):");
-        System.out.println("--------------------------------------------");
-        for (Child johnson : repository.findByLastName("johnson")) {
-            System.out.println(johnson);
-        }
-        */
